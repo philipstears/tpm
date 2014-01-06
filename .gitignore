@@ -1,1 +1,2 @@
 *.js
+!jakefile.js
