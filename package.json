@@ -1,0 +1,15 @@
+{
+  "name": "typescript-package-manager",
+  "version": "0.0.1",
+  "description": "An npm-like system for TypeScript",
+  "main": "built/program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git-internal.driveworks.co.uk/philipstears/tpm"
+  },
+  "author": "Philip Stears",
+  "license": "Apache License 2.0"
+}
