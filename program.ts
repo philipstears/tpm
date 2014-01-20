@@ -1,4 +1,6 @@
-import fs = require("fs")
+import spawn = module("child_process");
+import process = module("process");
 
-fs.stat("program.js", (err, stats) => {
-});
+var args = process.argv.slice(2);
+
+console.log(args[0]);
