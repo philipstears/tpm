@@ -1,7 +1,9 @@
 var args = process.argv;
+
+// The first two arguments are the node executable, and the script name
 var ourArgs = args.slice(2);
 
-if (args.length < 1) {
+if (ourArgs.length < 1) {
 	usage(); 
 	return;
 }
@@ -15,7 +17,8 @@ function usage() {
 	console.log("\tinstall [packageName]");
 }
 
-var verb = args[2];
+var verb = ourArgs[0];
+var verbArguments = ourArgs.slice(1);
 var verbProcessor = require("./" + verb + "Options");
 
-module.exports = verbProcessor();
+module.exports = verbProcessor(verbArguments);
