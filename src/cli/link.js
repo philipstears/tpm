@@ -34,7 +34,7 @@ $.run = function run() {
 	var modulesPath = path.join(process.cwd(), "ts_modules");
 	fsu.mkpath(modulesPath);
 	
-	var targetPath = path.join(process.cwd(), "ts_modules", packageName);
+	var targetPath = path.join(modulesPath, packageName);
 	fs.symlinkSync(linkPath, targetPath);
 }
 
