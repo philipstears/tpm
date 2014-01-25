@@ -15,10 +15,14 @@ function LinkMaker() {
 var $ = LinkMaker.prototype;
 
 $.run = function run() {
-	var packageDescriptionPath = findPackage("");
+	linkPackage("");
+}
+
+function linkPackage(directory) {
+	var packageDescriptionPath = findPackage(directory);
 
 	if (packageDescriptionPath===null) {
-		console.log("Couldn't locate a tspackage.json file");
+		throw new Error("Couldn't locate a tspackage.json file");
 		return;
 	}
 
