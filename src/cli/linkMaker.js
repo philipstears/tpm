@@ -1,4 +1,5 @@
 var CORE_BASE = "./../core/";
+var UTIL_BASE = "./../utils/";
 
 var fs = require("fs");
 var path = require("path");
@@ -6,7 +7,7 @@ var path = require("path");
 var paths = require(CORE_BASE + "paths");
 var findPackage = require(CORE_BASE + "findPackage");
 var Package = require(CORE_BASE + "package");
-var fsu = require(CORE_BASE + "fsUtil");
+var fsu = require(UTIL_BASE + "fsUtil");
 
 function LinkMaker() {
 }
