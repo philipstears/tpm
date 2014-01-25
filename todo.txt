@@ -1,6 +1,15 @@
-) Move utilities into own folder
-) Change the CLI to be a wrapper around an API core
-) init script to create a tspackage.json file (ala npm init)
-) Some sort of repository support
-) Split out tspackage.json facilities into own module so that it can be easily
+0) Move utilities into own folder
+1) Change the CLI to be a wrapper around an API core
+2) init script to create a tspackage.json file (ala npm init)
+3) Some sort of repository support
+4) Split out tspackage.json facilities into own module so that it can be easily
     consumed from typescript module core
+
+
+Stuff for a demo/blog - 
+	#2
+	Implement tspackage support in typescript
+
+Nice for a demo - 
+	Brackets support
+	Test out on Windows!
