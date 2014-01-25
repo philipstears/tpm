@@ -1,6 +1,7 @@
 var CORE_BASE = "./../core/";
 
 var fs = require("fs");
+var path = require("path");
 
 var paths = require(CORE_BASE + "paths");
 var findPackage = require(CORE_BASE + "findPackage");
@@ -13,20 +14,21 @@ function LinkMaker() {
 var $ = LinkMaker.prototype;
 
 $.run = function run() {
-	var packagePath = findPackage("");
+	var packageDescriptionPath = findPackage("");
 
-	if (packagePath===null) {
+	if (packageDescriptionPath===null) {
 		console.log("Couldn't locate a tspackage.json file");
 		return;
 	}
 
-	var package = new Package(packagePath);
+	var packageDirectory = path.dirname(packageDescriptionPath);
+	var package = new Package(packageDescriptionPath);
 	var packageLinkDir = paths.linkedModules;
 	var packageLinkPath = packageLinkDir + package.getName(); 
 
 	fsu.mkpath(packageLinkDir);
 
-	fs.symlinkSync(packagePath, packageLinkPath);
+	fs.symlinkSync(packageDirectory, packageLinkPath);
 };
 
 module.exports = LinkMaker;

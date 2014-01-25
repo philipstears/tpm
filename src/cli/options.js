@@ -14,7 +14,7 @@ function usage() {
 	console.log("");
 	console.log("Available verbs:");
 	console.log("\tlink");
-	console.log("\tinstall [packageName]");
+	console.log("\tlink [packageName]");
 }
 
 var verb = ourArgs[0];
