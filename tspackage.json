@@ -1,0 +1,7 @@
+{
+	"name": "tpm",
+	"displayName": "TypeScript Package Manager",
+	"author": "Philip Stears",
+	"copyright": "2013, Philip Stears. All rights reserved.",
+	"version": 0.1
+}
