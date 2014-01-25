@@ -15,6 +15,10 @@ var $ = Linker.prototype;
 
 $.run = function run() {
 	var packageName = this.__packageName; 
+	makeLink(packageName);
+}
+
+function makeLink(packageName) {
 	var linkPath = paths.linkedModules + packageName;
 	var exists = false;
 
@@ -28,7 +32,7 @@ $.run = function run() {
 	}
 
 	if (!exists) {
-		console.log("No package with the given name could be found");
+		throw new Error("No package with the given name could be found");
 		return;
 	}
 
