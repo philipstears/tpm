@@ -5,6 +5,10 @@
 4) Split out tspackage.json facilities into own module so that it can be easily
     consumed from typescript module core
 
+Linker at the moment links into current directory, should it search upwards to
+see if there is an existing ts_modules directory on the chain?
+
+What about if running tpm link inside of the ts_modules directory?
 
 Stuff for a demo/blog - 
 	#2
