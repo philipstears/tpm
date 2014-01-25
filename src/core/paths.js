@@ -6,7 +6,8 @@ switch (os.type()) {
 		paths = {
 			temp: os.tmpdir(),
 			global: '/usr/',
-			globalModules: '/usr/lib/ts_modules/'
+			globalModules: '/usr/lib/ts_modules/',
+			linkedModules: '/usr/lib/ts_modules/links/'
 		};
 	break;
 	
