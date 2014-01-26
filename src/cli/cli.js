@@ -19,5 +19,5 @@ function usage() {
 
 var verb = ourArgs[0];
 var verbArguments = ourArgs.slice(1);
-var verbProcessor = require("./" + verb + "Options")(verbArguments);
+var verbProcessor = require("./" + verb + "Verb")(verbArguments);
 verbProcessor.exec();
