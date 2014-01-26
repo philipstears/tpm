@@ -1,29 +1,28 @@
 module.exports = function(args) {
 	if (args.length === 0) {
-		return linkLocalOptions();
+		return registerLinkedModule();
 	} else {
-		return linkPackageOptions(args);
+		return importLinkedModule(args);
 	}
 }
 
-function linkLocalOptions() {
-	var LinkMaker = require("./linkMaker");
-	var runner = new LinkMaker();
+function importLinkedModule(args) {
+	var importer = require("./../core/importLinkedModule");
+	var moduleName = args[0];
 
 	return {
 		exec: function() {
-			return runner.run();
+			importer(moduleName);
 		}
 	}
 }
 
-function linkPackageOptions(args) {
-	var Linker = require("./link");
-	var runner = new Linker(args);
+function registerLinkedModule() {
+	var register = require("./../core/registerLinkedModule");
 
 	return {
 		exec: function() {
-			return runner.run();
+			register("");
 		}
 	}
 }
