@@ -31,9 +31,18 @@ module.exports = function(args) {
 			}
 
 			function done() {
+				var packageDescription = JSON.stringify(baseDescription, "\t");
+
 				console.log("tspackage.json file:\n");
-				console.log(JSON.stringify(baseDescription, "\t"));
-				rl.close();
+				console.log(packageDescription);
+
+				rl.question("Is the above package description correct? (yes/no): ", function(answer) {
+					if (answer === "y" || answer === "yes") {
+						fs.writeFileSync("tspackage.json",  packageDescription);
+					}
+
+					rl.close();
+				});
 			}
 
 			function askQuestion(question) {
