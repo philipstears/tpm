@@ -1,19 +1,12 @@
-var CORE_BASE = "./../core/";
+var UTIL_BASE = "./../utils/";
 
 var fs = require("fs");
 var path = require("path");
 
-var paths = require(CORE_BASE + "paths");
-var fsu = require(CORE_BASE + "fsUtil");
+var paths = require("./paths");
+var fsu = require(UTIL_BASE + "fsUtil");
 
-function Linker(packageName) {
-	this.__packageName = packageName;
-}
-
-var $ = Linker.prototype;
-
-$.run = function run() {
-	var packageName = this.__packageName; 
+function importLinkedModule(packageName) {
 	var linkPath = paths.linkedModules + packageName;
 	var exists = false;
 
@@ -27,7 +20,7 @@ $.run = function run() {
 	}
 
 	if (!exists) {
-		console.log("No package with the given name could be found");
+		throw new Error("No package with the given name could be found");
 		return;
 	}
 
@@ -38,6 +31,4 @@ $.run = function run() {
 	fs.symlinkSync(linkPath, targetPath);
 }
 
-module.exports = function(args) {
-	return new Linker(args[0]);
-}; 
+module.exports = importLinkedModule; 
