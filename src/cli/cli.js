@@ -15,6 +15,7 @@ function usage() {
 	console.log("Available verbs:");
 	console.log("\tlink");
 	console.log("\tlink [packageName]");
+	console.log("\tinit");
 }
 
 var verb = ourArgs[0];
