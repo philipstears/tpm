@@ -12,11 +12,17 @@ module.exports = function(args) {
 			});
 
 			var baseDescription = {
-				name: path.basename(process.cwd())
+				name: path.basename(process.cwd()),
+				version: "0.0",
+				license: "MIT",
+				main: "index"
 			};
 
 			var questions = [
 				["name (%s)", "name"],
+				["version (%s)", "version"],
+				["license (%s)", "license"],
+				["main (%s)", "main"],
 			];
 
 			var previousQuestion = -1;
