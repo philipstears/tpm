@@ -37,7 +37,7 @@ module.exports = function(args) {
 			}
 
 			function done() {
-				var packageDescription = JSON.stringify(baseDescription, "\t");
+				var packageDescription = JSON.stringify(baseDescription, null, "\t");
 
 				console.log("tspackage.json file:\n");
 				console.log(packageDescription);
